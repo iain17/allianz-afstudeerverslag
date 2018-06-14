@@ -1,0 +1,52 @@
+\chapter{Process en resultaten}
+In dit hoofdstuk beschrijf ik het proces en de resultaten van het afstudeerproject. Bij afwijkingen van het originele plan dat beschreven in het Plan Van Aanpak is dit beargumenteerd. Verder wordt er in dit hoofdstuk alleen het proces en de resultaten geconstateerd. Reflectie hierop en mijn keuzes worden in een volgend hoofdstuk beschreven en in dit hoofdstuk constateer ik alleen wat er is gebeurd.
+
+\section{Verloop van het project}
+Om het verloop van het project gestructureerd te verwoorden, is het project te verdelen in 4 fases: Initiatie fase, definitie fase, analyse en realisatie fase en afronding fase. Dit zijn ook de fases die opgenomen zijn in de planning in het plan van aanpak en zijn in de onderstaande subparagrafen op chronologische volgorde beschreven.\par
+
+Door de agile aanpak is in derde fase er beide analyse en realisatie tegelijkertijd uitgevoerd.  De gekozen Kanban agile methode laat dit ook toe. De reden hiervoor is om risico’s van het project te verminderen door de software, het onderzoek en enige analyse tegelijkertijd stukje voor stukje uit te voeren in iteraties \footnote{https://www.twynstraguddekennisbank.nl/projectmanagement/faseer-het-project}.
+
+\subsection{Fase: Initiatieffase (iteratie 0)}
+In deze eerste fase is het doel om een gelijk beeld van het project te verkrijgen van alle betrokkenen aan het project en hiermee goedkeuring te krijgen om het project te starten. Dit is gedaan door de stand van zaken vast te stellen en onderzoek te doen naar de aanleiding en doelstelling van het project.\par
+
+Deze fase is samen met de definitiefase uitgevoerd waar verdere analyse is gedaan naar het te ontwikkelen product. Dit is gedocumenteerd in het Plan Van Aanpak waarin het beoogde projectresultaat in termen van: randvoorwaarden, functionele en operationele prestaties, eisen, wensen en projectgrenzen duidelijk wordt. Een planning in de vorm van een GANTT chart met daarin de deadlines die vanuit school bekend zijn, geeft een beeld voor de komende fases.
+\newpage
+
+\subsection{Fase 2: Definitiefase (iteratie 0 - 1)}
+In de tweede fase is er verder gekeken naar het te ontwikkelen product. In deze fase is het Plan van Aanpak verder afgerond en vervolgens goedgekeurd, door zowel de stagebegeleider en assessor als de bedrijfsbegeleider. De ontwikkelmethode, Kanban is gekozen en de planning voor de aankomende realisatie- en analysefase zijn opgesplitst in 7 iteraties van 2 weken. Daarbij wordt per iteratie gekeken naar wat er nodig is aan werk voor de komende 2 weken.\par
+
+Om te beginnen is het duidelijk dat er een onderzoek gestart moet worden. De aanleiding hiervoor is dat het doel van het proof of concept moet aantonen dat het elektronische claim systeem use case van Allianz met de Blockchain Technologie geautomatiseerd kan worden.\par
+
+Omdat ik zelf nog niet bekend ben met de Blockchain Technologie en het duidelijk is dat er in een later stadium een geïnformeerd besluit gemaakt over moet worden, is het duidelijk dat de eerste iteratie zich vooral bezighoudt met een algemeen onderzoek naar de Blockchain Technologie. Hiermee is de definitiefase afgerond en begint de analyse / realisatie fase. 
+
+\subsection{Fase 3: Analyse / Realisatie Fase (Iteraties 1 - 5)}
+Er is tijdens deze fase meerdere malen analyse en realisatie uitgevoerd. In de onderstaande subparagrafen beschrijf ik per iteratie hoe het proces is gelopen en waar aan gewerkt is. De grootste afwijking met het originele plan, in het plan van aanpak is het opsplitsen van de resultaten in het onderzoeksverslag dat bestaat uit een literatuuronderzoek, analyse en het proof of concept experiment. Dit wordt gedaan na het ontvangen van de feedback op de 80\% versie en om verwarring te vermijden wordt er in het proces hieronder verwezen naar de namen van de losse documenten die aan het einde van het project met dit afstudeerverslag zijn meegeleverd.
+\newpage
+
+\input{chapters/iteraties/it_1}
+\newpage
+\input{chapters/iteraties/it_2}
+\newpage
+\input{chapters/iteraties/it_3}
+\newpage
+\input{chapters/iteraties/it_4}
+\input{chapters/iteraties/it_5}
+
+\subsection{Fase 4: Afrondingsfase (Iteraties 6 - 7)}
+De nazorg van dit project betreft eigenlijk alleen het afronden van documenten. Deze fase bevat ook een tussentijdse beoordeling van school, waaruit feedback is ontvangen om het grote onderzoeksverslag op te splitsen in losse documenten.
+
+Verder is er tijdens deze fase gewerkt aan het afstudeerverslag wat u nu leest en zijn de bevindingen en conclusies uit het proof of concept op zijn geschreven in het proof of concept document.
+
+\section{Resultaten en Producten}
+Uit het proof of concept is gebleken dat het mogelijk is om het claimproces met de blockchain te automatiseren.\par
+Het resultaat van dit afstudeeropdracht is vooral het Smart Contract geschreven in Solidity en het onderzoek naar de Blockchain technologie. Hiermee is de hoofdvraag van dit afstudeerproject: “Hoe is de blockchain technologie in te zetten om het claimproces van Allianz te automatiseren?” beantwoord.\par
+
+De back-end en front-end code die er naast is ontwikkeld om het smart contract toegankelijk te maken, toont dat de volledige use cases van Allianz opgelost kunnen worden. De twee belangrijkste elementen van het proof of concept is dat nieuwe claims veilig geregistreerd worden in het smart contract op de blockchain. Met een wijziging van deze data is dit traceerbaar met een transactiecode. Dit is te zien in de onderstaande screenshot van de web applicatie, waar op het moment dat je op de transactiecode of verwerkingscode klikt je naar een externe derde website gaat die de transactie van data valideert in de blockchain.
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=\paperwidth-200]{images/claim-list}
+        \caption{Foto van de user interface waar een lijst aan claims te zien is}
+        \label{fig:claim-list}
+    \end{center}
+\end{figure}
+Alle musts en zelf een aantals coulds uit de MoScow analyse zijn gerealiseerd. Zo kan bijvoorbeeld ingesteld worden dat om een bepaald claimbedrag een claim automatisch geaccepteerd wordt. Maar deze berekening wordt door iedere lid van het netwerk uitgevoerd.

@@ -1,0 +1,194 @@
+%%%%%
+%%
+%% Afstudeerverslag
+%%
+%% Version: v0.1
+%% Authors: Iain Munro
+%% Date: 18/02/2018
+%%%%%
+
+%Install packages using:
+%sudo tlmgr install
+
+% Available documentclass options:
+%
+%   <all `report` document class options, e.g.: `a5paper`>
+%   withindex   - enables the index. New index entries can be added through `\index{my entry}`
+%   glossary    - enables the glossary.
+%   techreport  - typesets the thesis in the technical report format.
+%   firstyr     - formats the document as a first-year report.
+%   times       - uses the `Times` font.
+%   backrefs    - add back references in the Bibliography section
+%
+% For more info see `README.md`
+\documentclass[firstyr,a4paper,oneside]{cam-thesis}%withindex
+\usepackage[dutch]{babel}
+% Citations using numbers
+\usepackage[numbers]{natbib}
+
+\usepackage[utf8]{inputenc}
+
+%APA norm
+\usepackage{natbib}
+
+%tables new lines
+\usepackage{makecell}
+
+%Set the title spacing correctly
+\usepackage{titlesec}
+\titlespacing{\chapter}{0pt}{0pt}{0pt}
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+
+\input{solidity-highlighting.tex}
+
+%Om de pagina margins etc te debuggen
+%\usepackage{showframe}
+
+\usepackage{pgfgantt}
+\usepackage{rotating}
+\usepackage[graphicx]{realboxes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Style (Changing the visual style of chapter headings and stuff.)
+%%
+\RequirePackage{titlesec}
+% [Fixes issue #34 (see https://github.com/cambridge/thesis/issues/34). Solution from: http://tex.stackexchange.com/questions/299969/titlesec-loss-of-section-numbering-with-the-new-update-2016-03-15
+\RequirePackage{etoolbox}
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+% end of issue #34 fix]
+\newcommand{\PreContentTitleFormat}{\titleformat{\chapter}[display]{\scshape\Large}
+{\Large\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+{1ex}
+{}
+[\vspace{1ex}\titlerule]}
+\newcommand{\ContentTitleFormat}{\titleformat{\chapter}[display]{\scshape\huge}
+{\Large\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+{1ex}
+{\titlerule\vspace{1ex}\filright}
+[\vspace{1ex}\titlerule]}
+\newcommand{\PostContentTitleFormat}{\PreContentTitleFormat}
+\PreContentTitleFormat
+
+%Om dubbelen legen pagina's weg te halen.
+\let\cleardoublepage=\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Thesis meta-information
+%%
+
+%% The title of the thesis:
+\title{Afstudeerverslag}
+
+%% The full name of the author (e.g.: James Smith):
+\author{Calum Iain Munro}
+
+%% College affiliation:
+\college{Software Development, ICA, VT}
+
+%% College shield [optional]:
+\collegeshield{CollegeShields/ICA}
+
+%% Submission date [optional]:
+\submissiondate{June, 2018}
+
+%% You can redefine the submission notice [optional]:
+\submissionnotice{
+HBO afstudeerverslag:\\
+\textbf{Versie: 1 (definitief)}\\
+\textbf{Datum: \today}\\
+\\~\\
+\textbf{Gegevens opdrachtgever:}\\
+Bedrijf:			HeadForward B.V.\\
+Contactpersonen:	Dani\"el Siahaya\\
+\\~\\
+\textbf{Gegevens opleiding:}\\
+Opleiding: HBO bachelor Informatica\\
+School: Hogeschool van Arnhem en Nijmegen\\
+Begeleider:	Misja Nabben\\
+Assessor: Rein Harle\\
+\\~\\
+\textbf{Gegevens opdrachtnemer:}\\
+Teamlid: Calum Iain Munro (549288)\\
+}
+
+%% Declaration date:
+\date{June, 2018}
+
+%% PDF meta-info:
+\subjectline{Afstudeerverslag}%Computer Science
+\keywords{Afstudeerverslag Calum Iain Munro HAN}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %% Abstract:
+% %%
+
+ \abstract{My abstract ...}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %% Acknowledgements:
+% %%
+ \acknowledgements{My acknowledgements ...}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Glossary [optional]:
+%%
+% \newglossaryentry{HOL}{
+%     name=HOL,
+%     description={Higher-order logic}
+% }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Inhoudsopgave:
+%%
+\begin{document}
+
+\bibliographystyle{plainnat}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title page, abstract, declaration etc.:
+%% -    the title page (is automatically omitted in the technical report mode).
+\frontmatter{}
+
+%Normale paragraven
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\input{chapters/1.Versiebeheer}
+\input{chapters/2.Samenvatting}
+\input{chapters/3.Inleiding}
+\input{chapters/4.Context}
+\input{chapters/5.Opdrachtomschrijving}
+\input{chapters/6.Methode}
+\input{chapters/7.Process}
+\input{chapters/8.Conclussie}
+\input{chapters/9.Reflectie}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Bibliography:
+%%
+%\cleardoublepage
+%\phantomsection
+\addcontentsline{toc}{chapter}{Bibliografie}
+\bibliography{thesis}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %% Appendix:
+% %%
+
+%\chapter{Bijlagen}
+
+\end{lstlisting}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Index:
+%%
+% \printthesisindex
+
+\end{document}
